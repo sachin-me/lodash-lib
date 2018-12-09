@@ -16,3 +16,7 @@ import "./intersection";
 import "./join";
 import "./last";
 import "./flattenDepth";
+import "./lastIndexOf";
+import "./nth";
+import "./pull";
+import "./pullAll";

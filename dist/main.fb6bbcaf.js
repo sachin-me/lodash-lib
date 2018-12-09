@@ -245,13 +245,14 @@ function flatten(arr) {
 } // let f = flatten([1, [2], 3, "sjdgkj", [6]]);
 // console.log(f);
 },{}],"js/flattenDeep.js":[function(require,module,exports) {
-// function flattenDeep(arr) {
-//   return arr.reduce((acc, v) => {
-//     return Array.isArray(v) ? acc.concat(flattenDeep(v)) : acc.concat(v);
-//   }, [])
-// }
-// let flat = flattenDeep([1, [2, 3], [["shdgash"]]]);
-// console.log(flat);
+function flattenDeep(arr) {
+  return arr.reduce(function (acc, v) {
+    return Array.isArray(v) ? acc.concat(flattenDeep(v)) : acc.concat(v);
+  }, []);
+}
+
+var flatDeepEl = flattenDeep([1, [2, 3], [["shdgash"]]]);
+console.log(flatDeepEl);
 },{}],"js/fromPairs.js":[function(require,module,exports) {
 function fromPairs(pairs) {
   return pairs.reduce(function (acc, v) {
@@ -310,7 +311,8 @@ var j = join(['a', 'b', 'c', 'd', 1, 2], '-');
 console.log(j);
 },{}],"js/last.js":[function(require,module,exports) {
 function last(arr) {
-  return arr.slice(arr.length - 1);
+  var newArr = arr.splice(arr.length - 1);
+  return +newArr.join('');
 }
 
 var last1 = last([1, 2, 3, 's', 'd', 10]);
@@ -330,6 +332,48 @@ function flattenDepth(arr, num) {
 
 var flat = flattenDepth([1, [2, 3], [["shdgash"]], [[[[[[10]]]]]]], 6);
 console.log(flat);
+},{}],"js/lastIndexOf.js":[function(require,module,exports) {
+function lastIndexOf(arr, val, fromIndex) {
+  return arr.lastIndexOf(val, fromIndex);
+}
+
+var lastIndex = lastIndexOf([1, 2, 3, 4, 5, 1, 10, 5], 5, -1);
+console.log(lastIndex);
+},{}],"js/nth.js":[function(require,module,exports) {
+function nth(arr, len) {
+  return arr.reduce(function (acc, v, i) {
+    if (i == len) {
+      acc = v;
+    } else if (i == arr.length + len) {
+      acc = v;
+    }
+
+    return acc;
+  }, 0);
+}
+
+var nthEl = nth([1, 2, 'a', 'n', 's', 100], -1);
+console.log(nthEl);
+},{}],"js/pull.js":[function(require,module,exports) {
+function pull(arr) {
+  for (var _len = arguments.length, values = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    values[_key - 1] = arguments[_key];
+  }
+
+  return arr.filter(function (v) {
+    return !values.includes(v);
+  });
+} // let pullEl = pull(['a', 'b', 'c', 'b'], 'a', 'c');
+// console.log(pullEl);
+},{}],"js/pullAll.js":[function(require,module,exports) {
+function pullAll(arr, value) {
+  return arr.filter(function (x) {
+    return !value.includes(x);
+  });
+}
+
+var pullAllEl = pullAll(['a', 'b', 'c', 'b'], ['a', 'c']);
+console.log(pullAllEl);
 },{}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
@@ -368,7 +412,15 @@ require("./join");
 require("./last");
 
 require("./flattenDepth");
-},{"./chunk":"js/chunk.js","./compact":"js/compact.js","./concat":"js/concat.js","./difference":"js/difference.js","./drop":"js/drop.js","./drop-right":"js/drop-right.js","./dropRightWhile":"js/dropRightWhile.js","./fill":"js/fill.js","./flatten":"js/flatten.js","./flattenDeep":"js/flattenDeep.js","./fromPairs":"js/fromPairs.js","./head":"js/head.js","./indexOf":"js/indexOf.js","./initial":"js/initial.js","./intersection":"js/intersection.js","./join":"js/join.js","./last":"js/last.js","./flattenDepth":"js/flattenDepth.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./lastIndexOf");
+
+require("./nth");
+
+require("./pull");
+
+require("./pullAll");
+},{"./chunk":"js/chunk.js","./compact":"js/compact.js","./concat":"js/concat.js","./difference":"js/difference.js","./drop":"js/drop.js","./drop-right":"js/drop-right.js","./dropRightWhile":"js/dropRightWhile.js","./fill":"js/fill.js","./flatten":"js/flatten.js","./flattenDeep":"js/flattenDeep.js","./fromPairs":"js/fromPairs.js","./head":"js/head.js","./indexOf":"js/indexOf.js","./initial":"js/initial.js","./intersection":"js/intersection.js","./join":"js/join.js","./last":"js/last.js","./flattenDepth":"js/flattenDepth.js","./lastIndexOf":"js/lastIndexOf.js","./nth":"js/nth.js","./pull":"js/pull.js","./pullAll":"js/pullAll.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -395,7 +447,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32915" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45927" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
