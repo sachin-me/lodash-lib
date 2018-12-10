@@ -104,7 +104,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"js/chunk.js":[function(require,module,exports) {
+})({"js/Array/chunk.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -124,7 +124,7 @@ function chunk(arr, size) {
   }, []);
 } // var l = chunk([1, 2, 3, 4, 5, 6, 7], 2);
 // console.log(l);
-},{}],"js/compact.js":[function(require,module,exports) {
+},{}],"js/Array/compact.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -142,7 +142,7 @@ function compact(arr) {
   }, []);
 } // var c = compact([1, 2, 3, 4, 5, 0, false, undefined, "", NaN]);
 // console.log(c);
-},{}],"js/concat.js":[function(require,module,exports) {
+},{}],"js/Array/concat.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -158,7 +158,7 @@ function concat(arr) {
   return arr.concat.apply(arr, value);
 } // let c2 = concat([1, 2, 3, 4], 5, 'a', [10], [11], [[15]]);
 // console.log(c2);
-},{}],"js/difference.js":[function(require,module,exports) {
+},{}],"js/Array/difference.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -188,7 +188,7 @@ function difference(array, _ref) {
   });
 } // let c3 = difference([2, 3, 4, 10], [2, 3]);
 // console.log(c3);
-},{}],"js/drop.js":[function(require,module,exports) {
+},{}],"js/Array/drop.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -203,7 +203,7 @@ function drop(array) {
   return newArr;
 } // let c4 = drop([1, 2, 3, 4, 5], 2);
 // console.log(c4);
-},{}],"js/drop-right.js":[function(require,module,exports) {
+},{}],"js/Array/drop-right.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -216,7 +216,7 @@ function dropRight(arr) {
   return arr.slice(0, arr.length - size);
 } // let c5 = dropRight([1, 2, 3, 4, 5], 2);
 // console.log(c5);
-},{}],"js/dropRightWhile.js":[function(require,module,exports) {
+},{}],"js/Array/dropRightWhile.js":[function(require,module,exports) {
 // var users = [
 //     { 'user': 'barney',  'active': true },
 //     { 'user': 'fred',    'active': false },
@@ -230,21 +230,21 @@ function dropRight(arr) {
 // }
 // var d = dropRightWhile(users, callback);
 // console.log(d);
-},{}],"js/fill.js":[function(require,module,exports) {
+},{}],"js/Array/fill.js":[function(require,module,exports) {
 function fill(arr, val, start, end) {
   return arr.fill(val, start, end);
 }
 
 var f = fill([1, 2, 3, 4, 5, 6], 0, 1, 3);
 console.log(f);
-},{}],"js/flatten.js":[function(require,module,exports) {
+},{}],"js/Array/flatten.js":[function(require,module,exports) {
 function flatten(arr) {
   return arr.reduce(function (acc, v) {
     return acc.concat(v);
   }, []);
 } // let f = flatten([1, [2], 3, "sjdgkj", [6]]);
 // console.log(f);
-},{}],"js/flattenDeep.js":[function(require,module,exports) {
+},{}],"js/Array/flattenDeep.js":[function(require,module,exports) {
 function flattenDeep(arr) {
   return arr.reduce(function (acc, v) {
     return Array.isArray(v) ? acc.concat(flattenDeep(v)) : acc.concat(v);
@@ -253,7 +253,7 @@ function flattenDeep(arr) {
 
 var flatDeepEl = flattenDeep([1, [2, 3], [["shdgash"]]]);
 console.log(flatDeepEl);
-},{}],"js/fromPairs.js":[function(require,module,exports) {
+},{}],"js/Array/fromPairs.js":[function(require,module,exports) {
 function fromPairs(pairs) {
   return pairs.reduce(function (acc, v) {
     acc[v[0]] = v[1];
@@ -263,21 +263,21 @@ function fromPairs(pairs) {
 
 var pair = fromPairs([['a', 1], ['b', 2], ['c', 3]]);
 console.log(pair);
-},{}],"js/head.js":[function(require,module,exports) {
+},{}],"js/Array/head.js":[function(require,module,exports) {
 function head(arr) {
   return arr[0];
 } // let h1 = head([1, 2, 3, 4])
 // console.log(h1);
 // let h2 = head([]);
 // console.log(h2);
-},{}],"js/indexOf.js":[function(require,module,exports) {
+},{}],"js/Array/indexOf.js":[function(require,module,exports) {
 function indexOf(arr, value, fromIndex) {
   return arr.indexOf(value, fromIndex);
 }
 
 var i1 = indexOf([1, 2, 3, 4, 5], 3, 1);
 console.log(i1);
-},{}],"js/initial.js":[function(require,module,exports) {
+},{}],"js/Array/initial.js":[function(require,module,exports) {
 function initial(arr) {
   var newArr = arr.concat();
   newArr.splice(newArr.length - 1);
@@ -286,7 +286,7 @@ function initial(arr) {
 
 var init = initial([1, 2, 3, 4, 5, 6, 7]);
 console.log(init);
-},{}],"js/intersection.js":[function(require,module,exports) {
+},{}],"js/Array/intersection.js":[function(require,module,exports) {
 function intersection() {
   for (var _len = arguments.length, arr = new Array(_len), _key = 0; _key < _len; _key++) {
     arr[_key] = arguments[_key];
@@ -301,7 +301,7 @@ function intersection() {
 
 var init = intersection([1, 2, 5], [2, 5, 10, 1]);
 console.log(init);
-},{}],"js/join.js":[function(require,module,exports) {
+},{}],"js/Array/join.js":[function(require,module,exports) {
 function join(arr) {
   var separator = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ',';
   return arr.join(separator);
@@ -309,7 +309,7 @@ function join(arr) {
 
 var j = join(['a', 'b', 'c', 'd', 1, 2], '-');
 console.log(j);
-},{}],"js/last.js":[function(require,module,exports) {
+},{}],"js/Array/last.js":[function(require,module,exports) {
 function last(arr) {
   var newArr = arr.splice(arr.length - 1);
   return +newArr.join('');
@@ -317,7 +317,7 @@ function last(arr) {
 
 var last1 = last([1, 2, 3, 's', 'd', 10]);
 console.log(last1);
-},{}],"js/flattenDepth.js":[function(require,module,exports) {
+},{}],"js/Array/flattenDepth.js":[function(require,module,exports) {
 function flattenDepth(arr, num) {
   if (num == 0) return arr;
   var one = arr.reduce(function (acc, v) {
@@ -332,14 +332,14 @@ function flattenDepth(arr, num) {
 
 var flat = flattenDepth([1, [2, 3], [["shdgash"]], [[[[[[10]]]]]]], 6);
 console.log(flat);
-},{}],"js/lastIndexOf.js":[function(require,module,exports) {
+},{}],"js/Array/lastIndexOf.js":[function(require,module,exports) {
 function lastIndexOf(arr, val, fromIndex) {
   return arr.lastIndexOf(val, fromIndex);
 }
 
 var lastIndex = lastIndexOf([1, 2, 3, 4, 5, 1, 10, 5], 5, -1);
 console.log(lastIndex);
-},{}],"js/nth.js":[function(require,module,exports) {
+},{}],"js/Array/nth.js":[function(require,module,exports) {
 function nth(arr, len) {
   return arr.reduce(function (acc, v, i) {
     if (i == len) {
@@ -354,7 +354,7 @@ function nth(arr, len) {
 
 var nthEl = nth([1, 2, 'a', 'n', 's', 100], -1);
 console.log(nthEl);
-},{}],"js/pull.js":[function(require,module,exports) {
+},{}],"js/Array/pull.js":[function(require,module,exports) {
 function pull(arr) {
   for (var _len = arguments.length, values = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     values[_key - 1] = arguments[_key];
@@ -365,7 +365,7 @@ function pull(arr) {
   });
 } // let pullEl = pull(['a', 'b', 'c', 'b'], 'a', 'c');
 // console.log(pullEl);
-},{}],"js/pullAll.js":[function(require,module,exports) {
+},{}],"js/Array/pullAll.js":[function(require,module,exports) {
 function pullAll(arr, value) {
   return arr.filter(function (x) {
     return !value.includes(x);
@@ -374,53 +374,246 @@ function pullAll(arr, value) {
 
 var pullAllEl = pullAll(['a', 'b', 'c', 'b'], ['a', 'c']);
 console.log(pullAllEl);
+},{}],"js/Array/remove.js":[function(require,module,exports) {
+// function even(n) {
+//   if (n) {
+//     if (n % 2 == 0) {
+//       return n;
+//     }
+//     else if (n % 2 != 0) return;
+//   }
+// }
+// let evenN = even(10);
+// console.log(evenN);
+function remove(array) {
+  var eveArr = [];
+  array.splice(0, array.length).forEach(function (v) {
+    if (v % 2 == 0) {
+      eveArr.push(v);
+    } else {
+      return array.push(v);
+    }
+  });
+  console.log(array);
+  return eveArr;
+}
+
+var removeEl = remove([1, 2, 3, 4]);
+console.log(removeEl);
+},{}],"js/Array/reverse.js":[function(require,module,exports) {
+function reverse(arr) {
+  var reversedArr = [];
+
+  for (var i = arr.length - 1; i >= 0; i--) {
+    reversedArr.push(arr[i]);
+  }
+
+  return reversedArr;
+}
+
+var rev = reverse(['a', 'b', 'c']);
+console.log(rev);
+},{}],"js/Array/slice.js":[function(require,module,exports) {
+function slice(arr, start, end) {
+  return arr.slice(start, end);
+}
+
+var sliced = slice([1, 2, 3, 4, 5], 1, 3);
+console.log(sliced);
+},{}],"js/Array/isArray.js":[function(require,module,exports) {
+function isArray(arr) {
+  return Array.isArray(arr);
+}
+
+var isArr = isArray(document.body.children);
+console.log(isArr);
+},{}],"js/Array/without.js":[function(require,module,exports) {
+function without(arr) {
+  for (var _len = arguments.length, value = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    value[_key - 1] = arguments[_key];
+  }
+
+  return arr.filter(function (v) {
+    return !value.includes(v);
+  });
+}
+
+var withEl = without([1, 2, 3, 4, 5, 4], 4);
+console.log(withEl);
+},{}],"js/Array/find.js":[function(require,module,exports) {
+var users = [{
+  'user': 'barney',
+  'age': 36,
+  'active': true
+}, {
+  'user': 'fred',
+  'age': 40,
+  'active': false
+}, {
+  'user': 'pebbles',
+  'age': 1,
+  'active': true
+}];
+
+function check() {
+  return users.filter(function (element, i) {
+    if (element.age < 40) {
+      return element;
+    }
+  });
+}
+
+function matches() {
+  return users.filter(function (e) {
+    if (e.age == 1 && e.active == true) {
+      console.log(e);
+    }
+  });
+}
+
+function find(arr, callback) {
+  return arr.find(callback);
+}
+
+var cdwqkld = find(users, matches);
+console.log(cdwqkld);
+},{}],"js/Array/findIndex.js":[function(require,module,exports) {
+var users = [{
+  'user': 'barney',
+  'age': 36,
+  'active': true
+}, {
+  'user': 'fred',
+  'age': 40,
+  'active': false
+}, {
+  'user': 'pebbles',
+  'age': 1,
+  'active': true
+}];
+
+function checkInd() {
+  return users.filter(function (ele) {
+    if (ele.age < 40) {
+      return ele;
+    }
+  });
+}
+
+function findIndex(arr, callback) {
+  return arr.findIndex(callback);
+}
+
+var findEl = findIndex(users, checkInd);
+console.log(findEl);
+},{}],"js/Array/tail.js":[function(require,module,exports) {
+function tail(arr) {
+  return arr.slice(1, arr.length);
+}
+
+var tailEl = tail([1, 2, 3, 4, 5]);
+console.log(tailEl);
+},{}],"js/Collection/each.js":[function(require,module,exports) {
+function each(arr) {
+  return arr.forEach(function (element, i, array) {
+    console.log(element);
+  });
+}
+
+var forEach = each([1, 2, 3, 4]);
+console.log(forEach);
+},{}],"js/String/repeat.js":[function(require,module,exports) {
+function repeat(str, i) {
+  return str.repeat(i);
+}
+
+var repeatEl = repeat('abc', 1);
+console.log(repeatEl);
+},{}],"js/String/toLower.js":[function(require,module,exports) {
+function toLower(str) {
+  return str.toLowerCase();
+}
+
+var toLowerEl = toLower('FOobaR');
+console.log(toLowerEl);
+},{}],"js/String/toUpper.js":[function(require,module,exports) {
+function toUpper(str) {
+  return str.toUpperCase();
+}
+
+var toUpperEl = toUpper('skxsaxgsjagcuisagcsaukcxas');
+console.log(toUpperEl);
 },{}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
-require("./chunk");
+require("./Array/chunk");
 
-require("./compact");
+require("./Array/compact");
 
-require("./concat");
+require("./Array/concat");
 
-require("./difference");
+require("./Array/difference");
 
-require("./drop");
+require("./Array/drop");
 
-require("./drop-right");
+require("./Array/drop-right");
 
-require("./dropRightWhile");
+require("./Array/dropRightWhile");
 
-require("./fill");
+require("./Array/fill");
 
-require("./flatten");
+require("./Array/flatten");
 
-require("./flattenDeep");
+require("./Array/flattenDeep");
 
-require("./fromPairs");
+require("./Array/fromPairs");
 
-require("./head");
+require("./Array/head");
 
-require("./indexOf");
+require("./Array/indexOf");
 
-require("./initial");
+require("./Array/initial");
 
-require("./intersection");
+require("./Array/intersection");
 
-require("./join");
+require("./Array/join");
 
-require("./last");
+require("./Array/last");
 
-require("./flattenDepth");
+require("./Array/flattenDepth");
 
-require("./lastIndexOf");
+require("./Array/lastIndexOf");
 
-require("./nth");
+require("./Array/nth");
 
-require("./pull");
+require("./Array/pull");
 
-require("./pullAll");
-},{"./chunk":"js/chunk.js","./compact":"js/compact.js","./concat":"js/concat.js","./difference":"js/difference.js","./drop":"js/drop.js","./drop-right":"js/drop-right.js","./dropRightWhile":"js/dropRightWhile.js","./fill":"js/fill.js","./flatten":"js/flatten.js","./flattenDeep":"js/flattenDeep.js","./fromPairs":"js/fromPairs.js","./head":"js/head.js","./indexOf":"js/indexOf.js","./initial":"js/initial.js","./intersection":"js/intersection.js","./join":"js/join.js","./last":"js/last.js","./flattenDepth":"js/flattenDepth.js","./lastIndexOf":"js/lastIndexOf.js","./nth":"js/nth.js","./pull":"js/pull.js","./pullAll":"js/pullAll.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+require("./Array/pullAll");
+
+require("./Array/remove");
+
+require("./Array/reverse");
+
+require("./Array/slice");
+
+require("./Array/isArray");
+
+require("./Array/without");
+
+require("./Array/find");
+
+require("./Array/findIndex");
+
+require("./Array/tail");
+
+require("./Collection/each");
+
+require("./String/repeat");
+
+require("./String/toLower");
+
+require("./String/toUpper");
+},{"./Array/chunk":"js/Array/chunk.js","./Array/compact":"js/Array/compact.js","./Array/concat":"js/Array/concat.js","./Array/difference":"js/Array/difference.js","./Array/drop":"js/Array/drop.js","./Array/drop-right":"js/Array/drop-right.js","./Array/dropRightWhile":"js/Array/dropRightWhile.js","./Array/fill":"js/Array/fill.js","./Array/flatten":"js/Array/flatten.js","./Array/flattenDeep":"js/Array/flattenDeep.js","./Array/fromPairs":"js/Array/fromPairs.js","./Array/head":"js/Array/head.js","./Array/indexOf":"js/Array/indexOf.js","./Array/initial":"js/Array/initial.js","./Array/intersection":"js/Array/intersection.js","./Array/join":"js/Array/join.js","./Array/last":"js/Array/last.js","./Array/flattenDepth":"js/Array/flattenDepth.js","./Array/lastIndexOf":"js/Array/lastIndexOf.js","./Array/nth":"js/Array/nth.js","./Array/pull":"js/Array/pull.js","./Array/pullAll":"js/Array/pullAll.js","./Array/remove":"js/Array/remove.js","./Array/reverse":"js/Array/reverse.js","./Array/slice":"js/Array/slice.js","./Array/isArray":"js/Array/isArray.js","./Array/without":"js/Array/without.js","./Array/find":"js/Array/find.js","./Array/findIndex":"js/Array/findIndex.js","./Array/tail":"js/Array/tail.js","./Collection/each":"js/Collection/each.js","./String/repeat":"js/String/repeat.js","./String/toLower":"js/String/toLower.js","./String/toUpper":"js/String/toUpper.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -447,7 +640,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45927" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46609" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
