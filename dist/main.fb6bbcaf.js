@@ -616,6 +616,90 @@ function includes(arr, val, index) {
 
 var includesEl = includes('abcd', 'bc');
 console.log(includesEl);
+},{}],"js/Collection/map.js":[function(require,module,exports) {
+function square(n) {
+  return n * n;
+}
+
+function map(arr, callback) {
+  return arr.map(callback);
+}
+
+var mapEl = map([2, 4], square);
+console.log(mapEl); // let object = {'a': 4, 'b': 8}
+// let mapObj = (function(object) {
+//   console.log(Object.keys(object));
+//   for (const i of object) {
+//     console.log(i);
+//   } 
+// })(object);
+// console.log(mapObj);
+},{}],"js/Collection/minBy.js":[function(require,module,exports) {
+function minBy(arr) {
+  return arr.reduce(function (acc, v) {
+    for (var key in acc, v) {
+      return acc[key] <= v[key] ? acc : v;
+    }
+  }, {});
+}
+
+var minByEl = minBy([{
+  'n': 1
+}, {
+  'n': 2
+}]);
+console.log(minByEl);
+},{}],"js/Collection/maxBy.js":[function(require,module,exports) {
+function maxBy(arr) {
+  return arr.reduce(function (a, b) {
+    for (var key in a, b) {
+      return a[key] >= b[key] ? a : b;
+    }
+  }, {});
+}
+
+var maxByEl = maxBy([{
+  'n': 1
+}, {
+  'n': 2
+}]);
+console.log(maxByEl);
+},{}],"js/Collection/orderBy.js":[function(require,module,exports) {
+var users = [{
+  'user': 'fred',
+  'age': 48
+}, {
+  'user': 'barney',
+  'age': 34
+}, {
+  'user': 'fred',
+  'age': 40
+}, {
+  'user': 'barney',
+  'age': 36
+}];
+
+function orderBy(newArr, arr, itArr) {
+  return newArr.reduce(function (a, b) {
+    var _loop = function _loop(key) {
+      // console.log(`key = ${key} and value = ${b[key]}`);
+      arr.forEach(function (element) {
+        if (element == key) {
+          console.log(true);
+        } else if (element != key) {
+          console.log(false);
+        }
+      });
+    };
+
+    for (var key in b) {
+      _loop(key);
+    }
+  }, {});
+}
+
+var orderByEl = orderBy(users, ['user', 'age'], ['asc', 'dsc']);
+console.log(orderByEl);
 },{}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
@@ -698,7 +782,15 @@ require("./Collection/filter");
 require("./Collection/groupBy");
 
 require("./Collection/includes");
-},{"./Array/chunk":"js/Array/chunk.js","./Array/compact":"js/Array/compact.js","./Array/concat":"js/Array/concat.js","./Array/difference":"js/Array/difference.js","./Array/drop":"js/Array/drop.js","./Array/drop-right":"js/Array/drop-right.js","./Array/dropRightWhile":"js/Array/dropRightWhile.js","./Array/fill":"js/Array/fill.js","./Array/flatten":"js/Array/flatten.js","./Array/flattenDeep":"js/Array/flattenDeep.js","./Array/fromPairs":"js/Array/fromPairs.js","./Array/head":"js/Array/head.js","./Array/indexOf":"js/Array/indexOf.js","./Array/initial":"js/Array/initial.js","./Array/intersection":"js/Array/intersection.js","./Array/join":"js/Array/join.js","./Array/last":"js/Array/last.js","./Array/flattenDepth":"js/Array/flattenDepth.js","./Array/lastIndexOf":"js/Array/lastIndexOf.js","./Array/nth":"js/Array/nth.js","./Array/pull":"js/Array/pull.js","./Array/pullAll":"js/Array/pullAll.js","./Array/remove":"js/Array/remove.js","./Array/reverse":"js/Array/reverse.js","./Array/slice":"js/Array/slice.js","./Array/isArray":"js/Array/isArray.js","./Array/without":"js/Array/without.js","./Array/find":"js/Array/find.js","./Array/findIndex":"js/Array/findIndex.js","./Array/tail":"js/Array/tail.js","./String/repeat":"js/String/repeat.js","./String/toLower":"js/String/toLower.js","./String/toUpper":"js/String/toUpper.js","./String/trim":"js/String/trim.js","./String/replace":"js/String/replace.js","./Collection/each":"js/Collection/each.js","./Collection/every":"js/Collection/every.js","./Collection/filter":"js/Collection/filter.js","./Collection/groupBy":"js/Collection/groupBy.js","./Collection/includes":"js/Collection/includes.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./Collection/map");
+
+require("./Collection/minBy");
+
+require("./Collection/maxBy");
+
+require("./Collection/orderBy");
+},{"./Array/chunk":"js/Array/chunk.js","./Array/compact":"js/Array/compact.js","./Array/concat":"js/Array/concat.js","./Array/difference":"js/Array/difference.js","./Array/drop":"js/Array/drop.js","./Array/drop-right":"js/Array/drop-right.js","./Array/dropRightWhile":"js/Array/dropRightWhile.js","./Array/fill":"js/Array/fill.js","./Array/flatten":"js/Array/flatten.js","./Array/flattenDeep":"js/Array/flattenDeep.js","./Array/fromPairs":"js/Array/fromPairs.js","./Array/head":"js/Array/head.js","./Array/indexOf":"js/Array/indexOf.js","./Array/initial":"js/Array/initial.js","./Array/intersection":"js/Array/intersection.js","./Array/join":"js/Array/join.js","./Array/last":"js/Array/last.js","./Array/flattenDepth":"js/Array/flattenDepth.js","./Array/lastIndexOf":"js/Array/lastIndexOf.js","./Array/nth":"js/Array/nth.js","./Array/pull":"js/Array/pull.js","./Array/pullAll":"js/Array/pullAll.js","./Array/remove":"js/Array/remove.js","./Array/reverse":"js/Array/reverse.js","./Array/slice":"js/Array/slice.js","./Array/isArray":"js/Array/isArray.js","./Array/without":"js/Array/without.js","./Array/find":"js/Array/find.js","./Array/findIndex":"js/Array/findIndex.js","./Array/tail":"js/Array/tail.js","./String/repeat":"js/String/repeat.js","./String/toLower":"js/String/toLower.js","./String/toUpper":"js/String/toUpper.js","./String/trim":"js/String/trim.js","./String/replace":"js/String/replace.js","./Collection/each":"js/Collection/each.js","./Collection/every":"js/Collection/every.js","./Collection/filter":"js/Collection/filter.js","./Collection/groupBy":"js/Collection/groupBy.js","./Collection/includes":"js/Collection/includes.js","./Collection/map":"js/Collection/map.js","./Collection/minBy":"js/Collection/minBy.js","./Collection/maxBy":"js/Collection/maxBy.js","./Collection/orderBy":"js/Collection/orderBy.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -725,7 +817,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46609" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35139" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

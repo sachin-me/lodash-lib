@@ -38,3 +38,7 @@ import "./Collection/every";
 import "./Collection/filter";
 import "./Collection/groupBy";
 import "./Collection/includes";
+import "./Collection/map";
+import "./Collection/minBy";
+import "./Collection/maxBy";
+import "./Collection/orderBy";
